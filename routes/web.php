@@ -5,6 +5,9 @@ use App\Http\Controllers\LoginController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MasterController;
+use App\Http\Controllers\MasterBarangController;
+use App\Http\Controllers\MasterKategoryController;
+use App\Http\Controllers\MasterGudangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +37,19 @@ Route::post('/login',[LoginController::class, 'authenticate'])
 
 Route::get('/dashboard',[DashboardController::class, 'index']);
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
+
+
+Route::get('/master/barang',[MasterBarangController::class, 'index'])
+->name('master-barang')
+->middleware('auth');
+
+Route::get('/master/kategory',[MasterKategoryController::class, 'index'])
+->name('master-kategory')
+->middleware('auth');
+
+Route::get('/master/gudang',[MasterGudangController::class, 'index'])
+->name('master-gudang')
+->middleware('auth');
+
+
+

@@ -8,12 +8,12 @@
         <meta name="author" content="" />
         <title>Inventory</title>
         <link rel="stylesheet" href="{{asset('Bootstrap/css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{'styles.css'}}">
+        <link rel="stylesheet" href="{{asset('styles.css')}}">
         <link rel="shortcut icon" href="{{asset('image/logo1.png')}}" type="image/x-icon">
         <link rel="stylesheet" href="{{asset('fontawesome-web/css/all.min.css')}}">
         <link rel="stylesheet" href="{{asset('fontawesome-web/js/all.min.js')}}">
         <script src="{{asset('Bootstrap/js/bootstrap.bundle.min.js')}}"></script>  
-        <script src="{{('scripts.js')}}"></script>  
+        <script src="{{asset('scripts.js')}}"></script>  
     </head>
     <body class="sb-nav-fixed">
         @include('template/navigasi-atas')
