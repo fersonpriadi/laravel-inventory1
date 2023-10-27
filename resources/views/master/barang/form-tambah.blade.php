@@ -8,7 +8,7 @@
 @csrf
 <div class="mb-3 w-25">
   <label for="for_kode" class="form-label">Kode</label>
-  <input type="text" class="form-control" id="for_kode" name="for_kode" placeholder="input kode">
+  <input type="text" class="form-control" id="for_kode" name="for_kode" placeholder="input kode" autofocus>
 </div>
 <div class="mb-3 w-50">
   <label for="for_nama" class="form-label">Nama</label>

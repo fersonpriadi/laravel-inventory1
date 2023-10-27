@@ -46,8 +46,8 @@ class MasterBarangController extends Controller
         }catch (\Throwable $th) 
         { 
             return redirect()
-            ->route('master-tambah-barang')
-            ->with('error', $th->getMessage());
+            ->route('master-barang-tambah')
+            ->with('danger', $th->getMessage());
         }
     }
 
