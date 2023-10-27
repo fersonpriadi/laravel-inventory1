@@ -22,15 +22,17 @@
             @include('template/navigasi-kiri')
             </div>
             <div id="layoutSidenav_content">
-                <main>
+                <main">
                     <div class="container-fluid px-4 pt-4">
                         @yield('konten')
                     </div>
                 </main>
-            @include('template/footer')
+               
             </div>
            
         </div>
-        
+        <div>
+        @include('template/footer')
+        </div>
     </body>
 </html>
