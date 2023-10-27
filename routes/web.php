@@ -36,8 +36,13 @@ Route::post('/login',[LoginController::class, 'authenticate'])
 ->name('kirim-data-login');
 
 Route::get('/dashboard',[DashboardController::class, 'index']);
+
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
 
+
+Route::get('/master/barang/tambah',[MasterBarangController::class, 'create'])
+->name('master-barang-tambah')
+->middleware('auth');
 
 Route::get('/master/barang',[MasterBarangController::class, 'index'])
 ->name('master-barang')
