@@ -29,9 +29,9 @@ class MasterBarangController extends Controller
     {   
         $aturan = 
         [
-            'for_kode' => 'required|min:4|max:7|alpha_dash',
-            'for_nama' => 'required|min:10|max:50',
-            'for_deskripsi' => 'max:255|alpha_dash',
+            'for_kode' => 'required|max:10|alpha_dash',
+            'for_nama' => 'required|min:5|max:50',
+            'for_deskripsi' => 'required',
         ];
 
         $messages =  
@@ -51,7 +51,7 @@ class MasterBarangController extends Controller
             ->withErrors($validator)->withInput();
         }else{
             $insert = MasterBarangModel::create([
-                'kode'              => $request -> for_kode,
+                'kode'              => strtoupper($request -> for_kode),
                 'nama'              => $request -> for_nama,
                 'deskripsi'         => $request -> for_deskripsi,
                 'id_kategory'       => 0,

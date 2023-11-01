@@ -17,7 +17,7 @@
   <label for="for_nama" class="form-label">Nama</label>
   <input type="text" class="form-control" id="for_nama" name="for_nama" value="{{old('for_nama')}}" placeholder="input nama">
   @if ($errors->has('for_nama'))
-      <div class="badge text-bg-danger">{{$errors->first('for_deskripsi')}}</div>
+      <div class="badge text-bg-danger">{{$errors->first('for_nama')}}</div>
   @endif
 </div>
 <div class="mb-3">
