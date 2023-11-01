@@ -8,7 +8,6 @@ use App\Http\Controllers\MasterController;
 use App\Http\Controllers\MasterBarangController;
 use App\Http\Controllers\MasterKategoryController;
 use App\Http\Controllers\MasterGudangController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
