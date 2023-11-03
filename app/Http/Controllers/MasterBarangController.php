@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\MasterBarangModel;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class MasterBarangController extends Controller
@@ -75,9 +76,22 @@ class MasterBarangController extends Controller
         }
     }
 
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        // $barang = MasterBarangModel::where(['id' => $id])->first();
+        $barang = DB::select(
+            "SELECT
+                mba.*,
+                u1.name as dibuat_nama, u1.email as dibuat_email,
+                u2.name as diperbarui_nama, u2.email as diperbarui_email
+                FROM master_barang as mba
+                LEFT JOIN users as u1 ON mba.dibuat_oleh = u1.id
+                LEFT JOIN users as u2 ON mba.diperbarui_oleh = u2.id
+                WHERE mba.id = ?;",
+                [$id]
+        );
+
+        return view('master/barang/show-data', compact ('barang'));
     }
 
     public function edit(string $id)

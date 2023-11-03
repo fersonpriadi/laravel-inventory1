@@ -52,6 +52,13 @@ Route::get('/master/barang/hapus/{id}', [MasterBarangController::class, 'destroy
 ->where('id','[0-9]+')
 ->middleware('auth');
 
+Route::get('/master/barang/detail/{id}', [MasterBarangController::class, 'show'])
+->name('master-barang-detail')
+->where('id','[0-9]+')
+->middleware('auth');
+
+
+
 Route::get('/master/barang',[MasterBarangController::class, 'index'])
 ->name('master-barang')
 ->middleware('auth');

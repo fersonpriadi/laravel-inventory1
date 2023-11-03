@@ -16,4 +16,9 @@
 <div class="tab-content p-4">
   @yield('master-konten')
 </div>
+
+<div class="tab-content p-4">
+  @yield('konten-show')
+</div>
+
 @endsection

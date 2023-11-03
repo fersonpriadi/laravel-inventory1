@@ -37,7 +37,10 @@
           class="btn btn-danger"
           onclick="return confirm('Apakah anda yakin ingin menghapus : {{$b -> kode}} ?')"> 
           <i class="fa-solid fa-trash"></i></a>
-          <!-- <a href="{{route('master-barang-hapus', ['id' => $b->id]) }}" class="btn btn-danger"> <i class="fa-solid fa-circle-info"></i></a> -->
+
+          <a href="{{route('master-barang-detail', ['id' => $b->id]) }}" 
+          class="btn btn-success"> 
+          <i class="fa-solid fa-eye"></i></a>
       </td>
     </tr>
 @endforeach
