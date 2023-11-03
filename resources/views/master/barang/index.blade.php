@@ -34,16 +34,16 @@
       <td>{{$b -> deskripsi}}</td>
       <td>
           <a href="{{route('master-barang-hapus', ['id' => $b->id]) }}" 
-          class="btn btn-danger"
+          class="btn btn-danger rounded-circle"
           onclick="return confirm('Apakah anda yakin ingin menghapus : {{$b -> kode}} ?')"> 
           <i class="fa-solid fa-trash"></i></a>
 
           <a href="{{route('master-barang-detail', ['id' => $b->id]) }}" 
-          class="btn btn-success"> 
+          class="btn btn-success rounded-circle"> 
           <i class="fa-solid fa-eye"></i></a>
 
           <a href="{{route('master-barang-edit', ['id' => $b->id]) }}" 
-          class="btn btn-warning"> 
+          class="btn btn-warning rounded-circle"> 
           <i class="fa-solid fa-pencil"></i></a>
       </td>
     </tr>
