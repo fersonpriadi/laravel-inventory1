@@ -57,7 +57,15 @@ Route::get('/master/barang/detail/{id}', [MasterBarangController::class, 'show']
 ->where('id','[0-9]+')
 ->middleware('auth');
 
+Route::get('/master/barang/edit/{id}', [MasterBarangController::class, 'edit'])
+->name('master-barang-edit')
+->where('id','[0-9]+')
+->middleware('auth');
 
+Route::post('/master/barang/update/{id}',[MasterBarangController::class, 'update'])
+->name('master-barang-update')
+->where('id','[0-9]+')
+->middleware('auth');
 
 Route::get('/master/barang',[MasterBarangController::class, 'index'])
 ->name('master-barang')

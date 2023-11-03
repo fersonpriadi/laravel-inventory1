@@ -41,6 +41,10 @@
           <a href="{{route('master-barang-detail', ['id' => $b->id]) }}" 
           class="btn btn-success"> 
           <i class="fa-solid fa-eye"></i></a>
+
+          <a href="{{route('master-barang-edit', ['id' => $b->id]) }}" 
+          class="btn btn-warning"> 
+          <i class="fa-solid fa-pencil"></i></a>
       </td>
     </tr>
 @endforeach

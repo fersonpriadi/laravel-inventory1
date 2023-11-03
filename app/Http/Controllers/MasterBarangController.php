@@ -94,14 +94,69 @@ class MasterBarangController extends Controller
         return view('master/barang/show-data', compact ('barang'));
     }
 
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $barang = DB::select(
+            "SELECT
+                mba.*,
+                u1.name as dibuat_nama, u1.email as dibuat_email,
+                u2.name as diperbarui_nama, u2.email as diperbarui_email
+                FROM master_barang as mba
+                LEFT JOIN users as u1 ON mba.dibuat_oleh = u1.id
+                LEFT JOIN users as u2 ON mba.diperbarui_oleh = u2.id
+                WHERE mba.id = ?;",
+                [$id]
+        );
+        return view ('master/barang/form-edit', compact ('barang'));
     }
 
     public function update(Request $request, string $id)
     {
-        //
+        $aturan = 
+        [
+            'for_nama' => 'required|min:5|max:50',
+            'for_deskripsi' => 'required',
+        ];
+
+        $messages =  
+        [
+             'required' => 'Wajib Diisi',   
+             'min' => 'minimal :min karakter',
+             'max' => 'maksimal :max karakter',
+             'unique' => 'Kode anda sama Bos!',
+
+        ];
+
+        $validator = Validator::make($request->all(), $aturan, $messages);
+
+       try {
+        
+        // jika validasi gagal maka kembali ke form edit
+        if($validator->fails()){
+            return redirect()
+            ->route('master-barang-edit',$id)
+            ->withErrors($validator)->withInput();
+        }else{
+            // jika inputan user berhasil
+            // update ke database
+            $update = MasterBarangModel:: where('id', $id)->update([
+                'nama'              => $request -> for_nama,
+                'deskripsi'         => $request -> for_deskripsi,
+                'diperbarui_oleh'   => Auth::user()->id,
+                'diperbarui_kapan'  => date('Y-m-d H:i:s'),
+            ]);
+    
+            if($update) {
+                return redirect()->route('master-barang')
+                ->with('success', 'berhasil update barang');
+            }
+        }
+        }catch (\Throwable $th) 
+        { 
+            return redirect()
+            ->route('master-barang-edit', $id)
+            ->with('danger', $th->getMessage());
+        }
     }
 
     public function destroy($id_barang)
