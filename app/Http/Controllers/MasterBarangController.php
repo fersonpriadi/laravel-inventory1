@@ -29,7 +29,7 @@ class MasterBarangController extends Controller
     {   
         $aturan = 
         [
-            'for_kode' => 'required|max:10|alpha_dash',
+            'for_kode' => 'required|max:10|alpha_dash|unique:stok_barang,kode',
             'for_nama' => 'required|min:5|max:50',
             'for_deskripsi' => 'required',
         ];
@@ -39,6 +39,8 @@ class MasterBarangController extends Controller
              'required' => 'Wajib Diisi',   
              'min' => 'minimal :min karakter',
              'max' => 'maksimal :max karakter',
+             'unique' => 'Kode anda sama Bos!',
+
         ];
 
         $validator = Validator::make($request->all(), $aturan, $messages);
