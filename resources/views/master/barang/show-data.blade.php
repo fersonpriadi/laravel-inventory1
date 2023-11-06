@@ -15,7 +15,7 @@
 
 <div class="card" style=" box-shadow :  6px 4px 1px grey; width: 50%; text-align:center; justify-content:center;">
   <div class="card-body">
-    <h5 class="card-title">{{$barang[0]-> kode}}</h5>
+    <h5 class="card-title">{{$barang[0]-> kode_barang}}</h5>
     <h6 class="nama">{{$barang [0]-> nama}}</h6>
     <h6 class="card-text">{{ $barang[0]-> deskripsi}}</h6>
     <span class="card-text">Dibuat Kapan : {{$dibuat}} | {{ $barang [0]-> dibuat_nama}}</span> <br>

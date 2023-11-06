@@ -14,11 +14,27 @@
   </li>
 </ul>
 <div class="tab-content p-4">
+  @yield('master-konten-barang')
+</div>
+
+<div class="tab-content p-2">
   @yield('master-konten')
+</div>
+
+<div class="tab-content p-2">
+  @yield('master-konten-kategory')
+</div>
+
+<div class="tab-content p-2">
+  @yield('master-konten-edit-kategory')
 </div>
 
 <div class="tab-content p-4">
   @yield('konten-show')
+</div>
+
+<div class="tab-content p-4">
+  @yield('konten-show-kategory')
 </div>
 
 @endsection

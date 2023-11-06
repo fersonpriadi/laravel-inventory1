@@ -8,7 +8,7 @@
 @csrf
 <div class="mb-3 w-25">
   <label for="for_kode" class="form-label">Kode</label>
-  <input type="text" class="form-control" id="for_kode" name="for_kode" value="{{old('for_kode',$barang[0]->kode)}}" placeholder="input kode" disabled>
+  <input type="text" class="form-control" id="for_kode" name="for_kode" value="{{old('for_kode',$barang[0]->kode_barang)}}" placeholder="input kode" disabled>
   @if ($errors->has('for_kode'))
       <div class="badge text-bg-danger">{{$errors->first('for_kode')}}</div>
   @endif

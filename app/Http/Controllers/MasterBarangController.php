@@ -19,6 +19,7 @@ class MasterBarangController extends Controller
         // proses ambil data dari mysql
         $barang = MasterBarangModel::where('status', 1) -> get();
         return view('master/barang/index', compact('barang'));
+        
     }
 
     public function create()

@@ -75,6 +75,22 @@ Route::get('/master/kategory',[MasterKategoryController::class, 'index'])
 ->name('master-kategory')
 ->middleware('auth');
 
+Route::get('/master/kategory/tambah',[MasterKategoryController::class, 'create'])
+->name('master-kategory-tambah')
+->middleware('auth');
+
+Route::get('/master/kategory/hapus/{id}',[MasterKategoryController::class, 'destroy'])
+->name('master-kategory-hapus')
+->middleware('auth');
+
+Route::get('/master/kategory/detail/{id}',[MasterKategoryController::class, 'show'])
+->name('master-kategory-detail')
+->middleware('auth');
+
+Route::post('/master/kategory/simpan',[MasterKategoryController::class, 'store'])
+->name('master-kategory-simpan')
+->middleware('auth');
+
 Route::get('/master/gudang',[MasterGudangController::class, 'index'])
 ->name('master-gudang')
 ->middleware('auth');

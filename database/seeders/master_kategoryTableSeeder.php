@@ -6,48 +6,47 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class master_barangTableSeeder extends Seeder
+class master_kategoryTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('master_barang')->insert([
+        DB::table('master_kategory')->insert([
             [
-                'kode'              => 'TGO-KLG',
-                'nama'              => 'Tango Kaleng',
-                'deskripsi'         => 'Wafer tango kemasan kaleng coklat',
+                'kode'              => 'MKN-001',
+                'jenis_barang'      => 'food',
+                'kemasang_barang'    => 'DUS',
                 'id_kategory'       => null,
                 'id_gudang'         => null,
                 'dibuat_kapan'      => date('y-m-d H:i:s'),
-                'status'            => 1,
                 'dibuat_oleh'       => 1,
                 'diperbarui_kapan'  => null,
+                'diperbarui_oleh'   => null,
             ],
             [
-                'kode'              => 'TGO-SAC',
-                'nama'              => 'Tango Sachet',
-                'deskripsi'         => 'Wafer kemasan sachet cokelat',
+                'kode'              => 'MKN-002',
+                'jenis_barang'      => 'non-food',
+                'kemasang_barang'    => 'pack',
                 'id_kategory'       => null,
                 'id_gudang'         => null,
                 'dibuat_kapan'      => date('y-m-d H:i:s'),
-                'status'            => 1,
                 'dibuat_oleh'       => 1,
                 'diperbarui_kapan'  => null,
+                'diperbarui_oleh'   => null,
             ],
             [
-                'kode'              => 'IDM-DUS',
-                'nama'              => 'Indomie Dus',
-                'deskripsi'         => 'indomie yang dijual dalam kemasan dus',
+                'kode'              => 'MKN-003',
+                'jenis_barang'      => 'food',
+                'kemasang_barang'    => 'DUS',
                 'id_kategory'       => null,
                 'id_gudang'         => null,
                 'dibuat_kapan'      => date('y-m-d H:i:s'),
-                'status'            => 1,
                 'dibuat_oleh'       => 1,
                 'diperbarui_kapan'  => null,
-            ]
-            
+                'diperbarui_oleh'   => null,
+            ],
         ]);
     }
 }

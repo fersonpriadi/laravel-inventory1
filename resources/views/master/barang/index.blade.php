@@ -1,6 +1,6 @@
 @extends('master/all')
 
-@section('master-konten')
+@section('master-konten-barang')
 
 
 <div class="row">
@@ -16,7 +16,7 @@
       <th scope="col">id</th>
       <th scope="col">kode</th>
       <th scope="col">Nama</th>
-      <th style="width: 30%;" scope="col">Kategory</th>
+      <th style="width: 30%;" scope="col">Deskripsi</th>
       <th scope="col">Choice</th>
      
     </tr>
@@ -29,7 +29,7 @@
 @foreach ($barang as $b)
     <tr>
       <th>{{$i++}}</th>
-      <td>{{$b -> kode}}</td>
+      <td>{{$b -> kode_barang}}</td>
       <td>{{$b -> nama}}</td>
       <td>{{$b -> deskripsi}}</td>
       <td>
