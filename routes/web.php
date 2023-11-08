@@ -8,6 +8,8 @@ use App\Http\Controllers\MasterController;
 use App\Http\Controllers\MasterBarangController;
 use App\Http\Controllers\MasterKategoryController;
 use App\Http\Controllers\MasterGudangController;
+use App\Http\Controllers\StockController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -96,4 +98,16 @@ Route::get('/master/gudang',[MasterGudangController::class, 'index'])
 ->middleware('auth');
 
 
+Route::get('/stock',[StockController::class, 'index'])
+->name('form-stock-barang')
+->middleware('auth');
+
+
+Route::post('/stok-masuk', [StokController::class, 'form_stok_masuk'])
+    ->name('stok-masuk')
+    ->middleware('auth');
+
+Route::post('/stok-in', [StokController::class, 'proses_stok_masuk'])
+    ->name('proses-stok-masuk')
+    ->middleware('auth');
 

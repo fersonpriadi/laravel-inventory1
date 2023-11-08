@@ -15,7 +15,7 @@ class master_barangTableSeeder extends Seeder
     {
         DB::table('master_barang')->insert([
             [
-                'kode'              => 'TGO-KLG',
+                'kode_barang'              => 'TGO-KLG',
                 'nama'              => 'Tango Kaleng',
                 'deskripsi'         => 'Wafer tango kemasan kaleng coklat',
                 'id_kategory'       => null,
@@ -26,7 +26,7 @@ class master_barangTableSeeder extends Seeder
                 'diperbarui_kapan'  => null,
             ],
             [
-                'kode'              => 'TGO-SAC',
+                'kode_barang'              => 'TGO-SAC',
                 'nama'              => 'Tango Sachet',
                 'deskripsi'         => 'Wafer kemasan sachet cokelat',
                 'id_kategory'       => null,
@@ -37,7 +37,7 @@ class master_barangTableSeeder extends Seeder
                 'diperbarui_kapan'  => null,
             ],
             [
-                'kode'              => 'IDM-DUS',
+                'kode_barang'              => 'IDM-DUS',
                 'nama'              => 'Indomie Dus',
                 'deskripsi'         => 'indomie yang dijual dalam kemasan dus',
                 'id_kategory'       => null,

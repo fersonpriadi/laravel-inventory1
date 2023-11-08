@@ -11,6 +11,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-database"></i></div>
                                 Master Data
                             </a>
+
+                            <a class="nav-link {{(Request::segment(1) == 'stock') ? 'active' : '' }} " href="{{ url('/stock')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-database"></i></div>
+                                Master Stok
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer" style="background-color: blue;">

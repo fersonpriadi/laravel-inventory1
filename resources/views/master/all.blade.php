@@ -13,28 +13,34 @@
     <a class="nav-link {{(Request::segment(2) == 'gudang') ? 'active' : '' }} " href="{{route('master-gudang')}}">Gudang</a>
   </li>
 </ul>
-<div class="tab-content p-4">
+<div class="tab-content">
   @yield('master-konten-barang')
 </div>
 
-<div class="tab-content p-2">
+<div class="tab-content">
   @yield('master-konten')
 </div>
 
-<div class="tab-content p-2">
+<div class="tab-content ">
   @yield('master-konten-kategory')
 </div>
 
-<div class="tab-content p-2">
+<div class="tab-content">
   @yield('master-konten-edit-kategory')
 </div>
 
-<div class="tab-content p-4">
+<div class="tab-content">
   @yield('konten-show')
 </div>
 
-<div class="tab-content p-4">
+<div class="tab-content ">
   @yield('konten-show-kategory')
 </div>
+
+<div class="tab-content">
+  @yield('konten-form-stock')
+</div>
+
+
 
 @endsection
