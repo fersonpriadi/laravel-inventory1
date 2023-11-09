@@ -23,7 +23,7 @@
             @include('template/navigasi-kiri')
             </div>
             <div id="layoutSidenav_content">
-                <main">
+                <main>
                     <div class="container-fluid px-4 pt-4">
                         @include('template/flash-message')
                         @yield('konten')

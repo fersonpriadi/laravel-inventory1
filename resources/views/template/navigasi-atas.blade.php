@@ -18,7 +18,7 @@
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="{{route('logout')}}">Logout {{Auth::user()->name}} </a></li>
+                        <li><a class="dropdown-item" href="{{route('logout')}}"><span style="color:blue; font-weight:600">Logout</span> {{Auth::user()->name}} </a></li>
                     </ul>
                 </li>
             </ul>

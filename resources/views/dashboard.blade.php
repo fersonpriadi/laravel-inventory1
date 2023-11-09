@@ -5,5 +5,4 @@
 <span style="color: gold;">Inventory</span></h1>
 
 
-
 @endsection
