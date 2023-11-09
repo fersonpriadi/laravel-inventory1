@@ -55,7 +55,7 @@ class MasterBarangController extends Controller
             ->withErrors($validator)->withInput();
         }else{
             $insert = MasterBarangModel::create([
-                'kode'              => strtoupper($request -> for_kode),
+                'kode_barang'       => strtoupper($request -> for_kode),
                 'nama'              => $request -> for_nama,
                 'deskripsi'         => $request -> for_deskripsi,
                 'id_kategory'       => 0,

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('stok_keluar')->nullable();
             $table->integer('stok_sisa')->nullable();
             $table->integer('stok_minimal')->nullable();
+            $table->integer('status')->nullable();
             $table->dateTime('dibuat_kapan')->nullable();
             $table->integer('dibuat_oleh')->nullable();
             $table->dateTime('diperbarui_kapan')->nullable();

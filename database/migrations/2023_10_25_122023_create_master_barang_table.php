@@ -19,8 +19,8 @@ return new class extends Migration
             $table->integer('id_kategory')->nullable();
             $table->integer('id_gudang')->nullable();
             $table->integer('status');
-            $table->dateTime('dibuat_kapan');
-            $table->integer('dibuat_oleh');
+            $table->dateTime('dibuat_kapan')->nullable();
+            $table->integer('dibuat_oleh')->nullable();
             $table->dateTime('diperbarui_kapan')->nullable();
             $table->dateTime('diperbarui_oleh')->nullable();
         });

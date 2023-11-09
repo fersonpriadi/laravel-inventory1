@@ -9,6 +9,8 @@ use App\Http\Controllers\MasterBarangController;
 use App\Http\Controllers\MasterKategoryController;
 use App\Http\Controllers\MasterGudangController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\LandingDatastokController;
+use App\Http\Controllers\DeleteHistoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,17 +99,30 @@ Route::get('/master/gudang',[MasterGudangController::class, 'index'])
 ->name('master-gudang')
 ->middleware('auth');
 
+// route fungsi maste stock
+
+Route::get('/stok',[LandingDatastokController::class, 'index'])
+->name('master-stok')
+->middleware('auth');
 
 Route::get('/stock',[StockController::class, 'index'])
 ->name('form-stock-barang')
 ->middleware('auth');
 
+Route::post('/stock-in', [StockController::class, 'proses_stok_masuk'])
+->name('stock-in')
+->middleware('auth');
 
-Route::post('/stok-masuk', [StokController::class, 'form_stok_masuk'])
-    ->name('stok-masuk')
-    ->middleware('auth');
+Route::get('/History-Delete',[DeleteHistoryController::class, 'index'])
+->name('delete-history')
+->middleware('auth');
 
-Route::post('/stok-in', [StokController::class, 'proses_stok_masuk'])
-    ->name('proses-stok-masuk')
-    ->middleware('auth');
+Route::get('/update-item/{id}',[DeleteHistoryController::class, 'update'])
+->name('update-item')
+->where('id','[0-9]+')
+->middleware('auth');
+
+
+
+
 

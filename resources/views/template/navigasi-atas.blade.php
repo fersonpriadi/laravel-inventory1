@@ -1,4 +1,4 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: purple;">
+<nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: rgb(20, 100, 70);">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="#">Inventory Dachi</a>
             <!-- Sidebar Toggle-->

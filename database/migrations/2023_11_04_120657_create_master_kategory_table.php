@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('kode');
             $table->string('jenis_barang');
             $table->string('kemasang_barang');
+            $table->string('status')->nullable();
             $table->integer('id_kategory')->nullable();
             $table->integer('id_gudang')->nullable();
             $table->dateTime('dibuat_kapan');
