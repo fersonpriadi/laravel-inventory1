@@ -95,6 +95,16 @@ Route::post('/master/kategory/simpan',[MasterKategoryController::class, 'store']
 ->name('master-kategory-simpan')
 ->middleware('auth');
 
+Route::get('/master/kategory/edit/{id}',[MasterKategoryController::class, 'edit'])
+->name('master-kategory-edit')
+->middleware('auth');
+
+Route::post('/master/kategory/update/{id}',[MasterKategoryController::class, 'update'])
+->name('master-kategory-update')
+->where('id','[0-9]+')
+->middleware('auth');
+
+
 Route::get('/master/gudang',[MasterGudangController::class, 'index'])
 ->name('master-gudang')
 ->middleware('auth');

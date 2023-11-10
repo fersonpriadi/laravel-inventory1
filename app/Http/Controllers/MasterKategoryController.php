@@ -113,7 +113,7 @@ class MasterKategoryController extends Controller
                 mba.*,
                 u1.name as dibuat_nama, u1.email as dibuat_email,
                 u2.name as diperbarui_nama, u2.email as diperbarui_email
-                FROM master_barang as mba
+                FROM master_kategory as mba
                 LEFT JOIN users as u1 ON mba.dibuat_oleh = u1.id
                 LEFT JOIN users as u2 ON mba.diperbarui_oleh = u2.id
                 WHERE mba.id = ?;",
@@ -128,7 +128,51 @@ class MasterKategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $aturan = 
+        [
+            'for_jenis_barang' => 'required|min:3|max:50',
+            'for_kemasan' => 'required',
+        ];
+
+        $messages =  
+        [
+             'required' => 'Wajib Diisi',   
+             'min' => 'minimal :min karakter',
+             'max' => 'maksimal :max karakter',
+             'unique' => 'Tidak Boleh sama bos!',
+
+        ];
+
+        $validator = Validator::make($request->all(), $aturan, $messages);
+
+       try {
+        
+        // jika validasi gagal maka kembali ke form edit
+        if($validator->fails()){
+            return redirect()
+            ->route('master-kategory-edit',$id)
+            ->withErrors($validator)->withInput();
+        }else{
+            // jika inputan user berhasil
+            // update ke database
+            $update = MasterKategoryModel:: where('id', $id)->update([
+                'jenis_barang'              => $request -> for_jenis_barang,
+                'kemasang_barang'         => $request -> for_kemasan,
+                'diperbarui_oleh'   => Auth::user()->id,
+                'diperbarui_kapan'  => date('Y-m-d H:i:s'),
+            ]);
+    
+            if($update) {
+                return redirect()->route('master-kategory')
+                ->with('success', 'berhasil update kategory');
+            }
+        }
+        }catch (\Throwable $th) 
+        { 
+            return redirect()
+            ->route('master-kategory-edit', $id)
+            ->with('danger', $th->getMessage());
+        }
     }
 
     /**

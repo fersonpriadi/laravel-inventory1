@@ -41,7 +41,7 @@
           class="btn btn-success rounded-circle"> 
           <i class="fa-solid fa-eye"></i></a>
 
-          <a href="{{route('master-barang-edit', ['id' => $b->id]) }}" 
+          <a href="{{route('master-kategory-edit', ['id' => $b->id]) }}" 
           class="btn btn-warning rounded-circle"> 
           <i class="fa-solid fa-pencil"></i></a>
       </td>
