@@ -29,7 +29,8 @@
 </div>
 <div class="mb-3">
   <label for="for_kemasan" class="form-label">kemasan</label>
-  <textarea class="form-control" id="for_kemasan" name="for_kemasan" rows="3" placeholder="Input kemasang barang">{{old('for_kemasan', $barang[0]->kemasang_barang)}}</textarea>
+  <input class="form-control" id="for_kemasan" name="for_kemasan" rows="3" placeholder="Input kemasang barang" style="width: 24%;" 
+  value="{{old('for_kemasan', $barang[0]->kemasang_barang)}}"></input>
   @if ($errors->has('for_kemasan'))
       <div class="badge text-bg-danger">{{$errors->first('for_kemasan')}}</div>
   @endif

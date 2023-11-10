@@ -2,7 +2,7 @@
 
 @section('master-konten-kategory')
 
-    <div class="row">
+<div class="row" style="margin-top: 6px;">
   <div class="col-12 text-end">
     <a href="{{route('master-kategory-tambah')}}">
     <i class="fa fa-solid fa-plus btn btn-primary"></i>

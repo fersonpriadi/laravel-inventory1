@@ -3,7 +3,7 @@
 @section('master-konten')
 
 
-<h3 style="text-align: center; background-color : gold; padding: 5px 0; border-radius:10px;">Form tambah</h3>
+<h3 style="text-align: center; background-color : gold; padding: 5px 0; border-radius:10px; margin-top:13px;">Form tambah</h3>
 <form  action="{{route('master-barang-simpan')}}" method="post"  class="row g-3">
 @csrf
 <div class="mb-3 w-25">

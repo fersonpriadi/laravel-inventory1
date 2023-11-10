@@ -17,6 +17,11 @@
                                 Master Stok
                             </a>
                             <hr style="color:white;">
+                            <a class="nav-link {{(Request::segment(1) == 'stok-keluar') ? 'active' : '' }} " href="{{ url('/stok-keluar')}}">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-box"></i></div>
+                                Stock Keluar
+                            </a>
+                            <hr style="color:white;">
                             <a class="nav-link {{(Request::segment(1) == 'History-Delete') ? 'active' : '' }} " href="{{ url('/History-Delete')}}">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-trash"></i></div>
                                 Restore Item

@@ -7,8 +7,13 @@
 </div>
 
 <div class="tab-content">
+  @yield('form-keluar')
+</div>
+
+<div class="tab-content">
   @yield('konten-master-stok')
 </div>
+
 
 <div class="tab-content">
   @yield('master-history-delete')

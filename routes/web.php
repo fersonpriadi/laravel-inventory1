@@ -115,6 +115,14 @@ Route::get('/stok',[LandingDatastokController::class, 'index'])
 ->name('master-stok')
 ->middleware('auth');
 
+Route::get('/stok-keluar',[StockController::class, 'proses_stok_keluar'])
+->name('stok-keluar')
+->middleware('auth');
+
+Route::post('/stok-keluar',[StockController::class, 'button_stok_keluar'])
+->name('proses-stok-keluar')
+->middleware('auth');
+
 Route::get('/stock',[StockController::class, 'index'])
 ->name('form-stock-barang')
 ->middleware('auth');

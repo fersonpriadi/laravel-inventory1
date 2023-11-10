@@ -7,6 +7,10 @@
 <i class="fa-solid fa-plus"></i>
 </a>
 
+<a class="btn btn-warning" style="margin-left : 2rem;" href="{{route('stok-keluar')}}"> 
+<i class="fa-solid fa-plus"></i>
+</a>
+
 <table class="table table-hover" style="margin: 2rem;">
 <thead>
     <tr>
