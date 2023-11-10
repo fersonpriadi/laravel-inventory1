@@ -1,5 +1,32 @@
-/* #landing-body {
-    background-image: url(image/imgbg3.jpg);
-    background-size: 30cm;
-    background-position-x: 14rem;
-} */
+body {
+    background-color:rgb(157, 212, 169);
+}
+
+.konten-dashboard .dashboard-list{
+        width: 50%;
+        height: auto;
+        transition: width 1s, height 1s, transform 1s;
+      }
+      
+.konten-dashboard .dashboard-list:hover {
+        width: 450px;
+        height: 143px;
+        box-shadow: 3px 3px rgb(107, 88, 88);
+        transform:matrix3d();
+
+      }
+
+.konten-all .dashboard-list{
+        width: 35%;
+        height: auto;
+        transition: width 1s, height 1s, transform 1s;
+      }
+      
+.konten-all .dashboard-list:hover {
+        width: 370px;
+        height: 110px;
+        box-shadow: 2px 2px rgb(67, 134, 49);
+        transform:matrix3d();
+
+      }
+

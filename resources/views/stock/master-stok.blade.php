@@ -3,6 +3,10 @@
 @section('konten-master-stok')
 
 <h4 style="text-align: center; margin-bottom:3rem;">Data Stok Barang</h4>
+<a class="btn btn-primary" style="margin-left : 2rem;" href="{{route('form-stock-barang')}}"> 
+<i class="fa-solid fa-plus"></i>
+</a>
+
 <table class="table table-hover" style="margin: 2rem;">
 <thead>
     <tr>
@@ -35,8 +39,5 @@
   </tbody>
 </table>
 
-<a class="btn btn-primary" style="margin-left : 2rem;" href="{{route('form-stock-barang')}}"> 
-<i class="fa-solid fa-plus"></i>
-</a>
 
 @endsection

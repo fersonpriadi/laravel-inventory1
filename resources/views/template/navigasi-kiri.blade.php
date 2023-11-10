@@ -7,7 +7,7 @@
                                 Dashboard
                             </a>
                             <hr style="color:white;">
-                            <a class="nav-link {{(Request::segment(1) == 'master') ? 'active' : '' }} " href="{{ url('/master')}}">
+                            <a class="nav-link {{(Request::segment(1) == 'master') ? 'active' : '' }} " href="{{ url('/master/barang')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-database"></i></div>
                                 Master Data
                             </a>
