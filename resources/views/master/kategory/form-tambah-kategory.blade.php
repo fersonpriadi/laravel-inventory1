@@ -7,10 +7,17 @@
 <form  action="{{route('master-kategory-simpan')}}" method="post"  class="row g-3">
 @csrf
 <div class="mb-3 w-25">
+  <label for="for_kode_barang" class="form-label">Kode Barang</label>
+  <input type="text" class="form-control" id="for_kode_barang" name="for_kode_barang" value="{{old('for_kode_barang')}}" placeholder="input kode barang" >
+  @if ($errors->has('for_kode_barang'))
+      <div class="badge text-bg-danger">{{$errors->first('for_kode_barang')}}</div>
+  @endif
+</div>
+<div class="mb-3 w-25">
   <label for="for_kode" class="form-label">Kode Kategory</label>
-  <input type="text" class="form-control" id="for_kode" name="for_kode_kategory" value="{{old('for_kode')}}" placeholder="input kode" autofocus>
-  @if ($errors->has('for_kode'))
-      <div class="badge text-bg-danger">{{$errors->first('for_kode')}}</div>
+  <input type="text" class="form-control" id="for_kode" name="for_kode_kategory" value="{{old('for_kode')}}" placeholder="input kode" >
+  @if ($errors->has('for_kode_kategory'))
+      <div class="badge text-bg-danger">{{$errors->first('for_kode_kategory')}}</div>
   @endif
 </div>
 <div class="mb-3 w-50">

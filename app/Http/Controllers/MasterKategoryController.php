@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // use Illuminate\Http\Request;
 use App\Models\MasterKategoryModel;
+use App\Models\MasterBarangModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -36,7 +37,8 @@ class MasterKategoryController extends Controller
     {
         $aturan = 
         [
-            'for_kode' => 'required|max:10|alpha_dash',
+            'for_kode_barang' => 'required|max:10|alpha_dash',
+            'for_kode_kategory' => 'required|max:10|alpha_dash',
             'for_jenis_kategory' => 'required|min:5|max:50',
             'for_kemasan' => 'required',
         ];
@@ -60,9 +62,11 @@ class MasterKategoryController extends Controller
             ->withErrors($validator)->withInput();
         }else{
             $insert = MasterKategoryModel::create([
-                'kode'              => strtoupper($request -> for_kode),
+                'kode_barang'       => strtoupper($request ->for_kode_barang),
+                'kode'              => strtoupper($request -> for_kode_kategory),
                 'jenis_barang'      => $request -> for_jenis_kategory,
                 'kemasang_barang'   => $request -> for_kemasan,
+                'status'            => 1,
                 'id_kategory'       => 0,
                 'id_gudang'         => 0,
                 'dibuat_kapan'      => date('Y-m-d H:i:s'),
@@ -156,6 +160,7 @@ class MasterKategoryController extends Controller
             // jika inputan user berhasil
             // update ke database
             $update = MasterKategoryModel:: where('id', $id)->update([
+                'kode_barang'              => strtoupper($request -> for_kode_barang),
                 'jenis_barang'              => $request -> for_jenis_barang,
                 'kemasang_barang'         => $request -> for_kemasan,
                 'diperbarui_oleh'   => Auth::user()->id,

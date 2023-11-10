@@ -13,6 +13,13 @@
       <div class="badge text-bg-danger">{{$errors->first('for_kode')}}</div>
   @endif
 </div>
+<div class="mb-3 w-25">
+  <label for="for_kode_barang" class="form-label">Kode Barang</label>
+  <input type="text" class="form-control" id="for_kode_barang" name="for_kode_barang" value="{{old('for_kode_barang',$barang[0]->kode_barang)}}" placeholder="Input kode barang">
+  @if ($errors->has('for_kode_barang'))
+      <div class="badge text-bg-danger">{{$errors->first('for_kode_barang')}}</div>
+  @endif
+</div>
 <div class="mb-3 w-50">
   <label for="for_jenis_barang" class="form-label">jenis barang</label>
   <input type="text" class="form-control" id="for_jenis_barang" name="for_jenis_barang" value="{{old('for_jenis_barang', $barang[0]->jenis_barang)}}" placeholder="Jenis barang">

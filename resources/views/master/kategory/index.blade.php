@@ -13,6 +13,7 @@
   <thead>
     <tr>
       <th scope="col">id</th>
+      <th scope="col">kode barang</th>
       <th scope="col">kode kategory</th>
       <th scope="col">Jenis Barang</th>
       <th style="width: 30%;" scope="col">Kemasan Barang</th>
@@ -26,8 +27,9 @@
     $i = 1;
   @endphp
 @foreach ($barang as $b)
-    <tr>
+    <tr>      
       <th>{{$i++}}</th>
+      <th>{{$b -> kode_barang}}</th>
       <td>{{$b -> kode}}</td>
       <td>{{$b -> jenis_barang}}</td>
       <td>{{$b -> kemasang_barang}}</td>
