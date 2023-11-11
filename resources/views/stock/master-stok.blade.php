@@ -42,17 +42,6 @@
       <td>{{$b -> dibuat_kapan}}</td>
     </tr>
 @endforeach
-<tfooter-menu>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">KODE</th>
-      <th scope="col">STOK MASUK</th>
-      <th scope="col">STOK KELUAR</th>
-      <th scope="col">STOK SISA</th>
-      <th scope="col">STOK MINIMAL</th>
-      <th scope="col">DIBUAT KAPAN</th>
-    </tr>
-  </tfooter-menu>
   </tbody>
 </table>
 

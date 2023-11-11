@@ -11,7 +11,7 @@ class LandingDatastokController extends Controller
     // kirim data ke view master stok untuk melihat data
     {
         // proses ambil data dari mysql
-        $barang = StockBarangModel::where('status', 1) -> get();
+        $barang = StockBarangModel::where('status', 1) ->paginate();
         return view('stock/master-stok', compact('barang'));
     }
 }
