@@ -66,12 +66,13 @@ class StockController extends Controller
                 $isi = $request->form_jumlah_masuk;
 
             }
-            $keluar = $stok_sisa - $request->form_jumlah_keluar;
+            $isi_sisa = $stok_sisa + $request->form_jumlah_masuk;
             $insert = StockBarangModel::create([
                 'kode'                  => strtoupper($request->form_barang),
-                'stok_masuk'            => 0,
-                'stok_keluar'           => $request->form_jumlah_keluar,
-                'stok_sisa'             => $keluar,
+                'stok_masuk'            => $request->form_jumlah_masuk,
+                'stok_keluar'           => 0,
+                'stok_sisa'             => $isi_sisa,
+                'stok_minimal'          => 0,
                 'dibuat_kapan'          => date('Y-m-d H:i:s'),
                 'dibuat_oleh'           => Auth::user()->id,
                 'diperbarui_kapan'      => null,
@@ -133,7 +134,9 @@ class StockController extends Controller
             ->orderBy('id', 'DESC')
             ->first();
 
-            $stok_sisa = $cek_sisa['stok_sisa'];
+            $cek_minimal = $cek_sisa['stok_minimal'];
+
+            $stok_sisa = $cek_sisa['stok_sisa'] ?? 0;
             // jika ada sisa yang ditemukan
             if(isset($stok_sisa)){
                     //stok sisa + stok masuk baru
@@ -163,6 +166,7 @@ class StockController extends Controller
                                 'stok_masuk'        => 0,
                                 'stok_keluar'       => $request->form_jumlah_keluar,
                                 'stok_sisa'         => $keluar,
+                                'stok_minimal'      => $cek_minimal,
                                 'dibuat_kapan'      => date('Y-m-d H:i:s'),
                                 'dibuat_oleh'       => Auth::user()->id,
                                 'diperbarui_kapan'  => null,

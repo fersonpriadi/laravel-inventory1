@@ -11,6 +11,7 @@ use App\Http\Controllers\MasterGudangController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\LandingDatastokController;
 use App\Http\Controllers\DeleteHistoryController;
+use App\Http\Controllers\AddUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -139,6 +140,20 @@ Route::get('/update-item/{id}',[DeleteHistoryController::class, 'update'])
 ->name('update-item')
 ->where('id','[0-9]+')
 ->middleware('auth');
+
+
+// route fungsi add user login start
+
+Route::get('/add/new/user', [AddUserController::class, 'index'])
+->name('add-user')
+->middleware('auth');
+
+Route::post('/proses/simpan/user', [AddUserController::class, 'store'])
+->name('proses-simpan-user')
+->middleware('auth');
+
+
+// route fungsi add user login end
 
 
 

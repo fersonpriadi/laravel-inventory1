@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Master Data</h5>
                     <p class="card-text">Management menu master data inventory</p>
-                    <a href="{{route('master-barang')}}" class="btn btn-primary"><i class="fas fa-database p-2"></i>Menu</a>
+                    <a href="{{route('master-barang')}}" class="btn btn-primary "><i class="fas fa-database p-2"></i>Menu</a>
                 </div>
             </div>
         </div>

@@ -2,14 +2,16 @@
 
 @section('konten-master-stok')
 
-<h4 style="text-align: center; margin-bottom:3rem;">Data Stok Barang</h4>
+<h4 style="text-align: center; margin-bottom:3rem; background-color:gold; padding:10px; border-radius:10px;">Data Stok Barang</h4>
+<div class="button-stok-option" style="display:flex;  justify-content:center; gap:85%; padding:30px;">
 <a class="btn btn-primary" style="margin-left : 2rem;" href="{{route('form-stock-barang')}}"> 
 <i class="fa-solid fa-plus"></i>
 </a>
 
 <a class="btn btn-warning" style="margin-left : 2rem;" href="{{route('stok-keluar')}}"> 
-<i class="fa-solid fa-plus"></i>
+<i class="fa-solid fa-minus"></i>
 </a>
+</div>
 
 <table class="table table-hover" style="margin: 2rem;">
 <thead>
@@ -40,6 +42,17 @@
       <td>{{$b -> dibuat_kapan}}</td>
     </tr>
 @endforeach
+<tfooter-menu>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">KODE</th>
+      <th scope="col">STOK MASUK</th>
+      <th scope="col">STOK KELUAR</th>
+      <th scope="col">STOK SISA</th>
+      <th scope="col">STOK MINIMAL</th>
+      <th scope="col">DIBUAT KAPAN</th>
+    </tr>
+  </tfooter-menu>
   </tbody>
 </table>
 
