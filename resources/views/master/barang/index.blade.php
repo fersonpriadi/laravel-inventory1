@@ -35,7 +35,7 @@
       <td>
           <a href="{{route('master-barang-hapus', ['id' => $b->id]) }}" 
           class="btn btn-danger rounded-circle"
-          onclick="return confirm('Apakah anda yakin ingin menghapus : {{$b -> kode}} ?')"> 
+          onclick="return confirm('Apakah anda yakin ingin menghapus : {{$b -> kode_barang}} ?')"> 
           <i class="fa-solid fa-trash"></i></a>
 
           <a href="{{route('master-barang-detail', ['id' => $b->id]) }}" 

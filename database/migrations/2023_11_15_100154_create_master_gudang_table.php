@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('kode_gudang');
             $table->string('area');
             $table->string('tempat')->nullable();
+            $table->integer('dibuat_kapan')->nullable();
             $table->integer('dibuat_oleh')->nullable();
             $table->dateTime('diperbarui_kapan')->nullable();
             $table->dateTime('diperbarui_oleh')->nullable();

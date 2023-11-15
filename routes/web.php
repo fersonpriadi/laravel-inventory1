@@ -114,6 +114,14 @@ Route::get('/master/gudang',[MasterGudangController::class, 'index'])
 Route::get('/master/gudang/tambah',[MasterGudangController::class, 'create'])
 ->name('tambah-data-gudang')
 ->middleware('auth');
+
+Route::post('/master/gudang/simpan',[MasterGudangController::class, 'store'])
+->name('simpan-data-gudang')
+->middleware('auth');
+
+Route::get('/master/gudang/delete/{id}',[MasterGudangController::class, 'destroy'])
+->name('delete-item-gudang')
+->middleware('auth');
 // Route master gudang start
 
 // route fungsi maste stock
@@ -138,9 +146,13 @@ Route::post('/stock-in', [StockController::class, 'proses_stok_masuk'])
 ->name('stock-in')
 ->middleware('auth');
 
+
+// route restore start
 Route::get('/History-Delete',[DeleteHistoryController::class, 'index'])
 ->name('delete-history')
 ->middleware('auth');
+
+// route restore end
 
 Route::get('/update-item/{id}',[DeleteHistoryController::class, 'update'])
 ->name('update-item')

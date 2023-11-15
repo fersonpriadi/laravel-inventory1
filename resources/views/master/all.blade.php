@@ -37,7 +37,7 @@
   @yield('konten-show-kategory')
 </div>
 
-<div class="tab-content ">
+<div class="tab-content">
   @yield('master-konten-gudang')
 </div>
 

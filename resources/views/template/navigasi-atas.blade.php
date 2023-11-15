@@ -1,7 +1,7 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: rgb(20, 100, 70);">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="#" style="color:gold; font-weight: 600; 
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">YNR 
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">WS-net 
             <span style="font-size: 32px; color:chocolate;">Inventory</span></a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>

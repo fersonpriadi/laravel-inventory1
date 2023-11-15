@@ -1,6 +1,7 @@
 @extends('stock/all-conten')
 
 @section('master-history-delete')
+
 <h3 style="text-align: center;">History Delete</h3>
     <table class="table table-hover" style="margin: 2rem;">
   <thead>
