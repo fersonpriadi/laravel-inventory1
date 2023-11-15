@@ -57,6 +57,8 @@ class StockController extends Controller
 
             $stok_sisa = $cek_sisa['stok_sisa']?? 0;
 
+            $stok_minimal = $cek_sisa['stok_minimal']?? 0;
+
             // jika ada sisa yang ditemukan
             if(isset($stok_sisa)){
                 $isi = $stok_sisa + $request->form_jumlah_masuk;
@@ -72,7 +74,7 @@ class StockController extends Controller
                 'stok_masuk'            => $request->form_jumlah_masuk,
                 'stok_keluar'           => 0,
                 'stok_sisa'             => $isi_sisa,
-                'stok_minimal'          => 0,
+                'stok_minimal'          => $stok_minimal,
                 'dibuat_kapan'          => date('Y-m-d H:i:s'),
                 'dibuat_oleh'           => Auth::user()->id,
                 'diperbarui_kapan'      => null,

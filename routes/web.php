@@ -105,10 +105,16 @@ Route::post('/master/kategory/update/{id}',[MasterKategoryController::class, 'up
 ->where('id','[0-9]+')
 ->middleware('auth');
 
+// Route master gudang start
 
 Route::get('/master/gudang',[MasterGudangController::class, 'index'])
 ->name('master-gudang')
 ->middleware('auth');
+
+Route::get('/master/gudang/tambah',[MasterGudangController::class, 'create'])
+->name('tambah-data-gudang')
+->middleware('auth');
+// Route master gudang start
 
 // route fungsi maste stock
 

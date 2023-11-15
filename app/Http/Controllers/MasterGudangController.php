@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
 class MasterGudangController extends Controller
 {
@@ -19,7 +20,7 @@ class MasterGudangController extends Controller
      */
     public function create()
     {
-        //
+        return view('master/gudang/form-tambah-gudang');
     }
 
     /**
