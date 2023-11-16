@@ -30,7 +30,7 @@
     <tr>      
       <th>{{$i++}}</th>
       <th>{{$b -> kode_barang}}</th>
-      <td>{{$b -> kode}}</td>
+      <td>{{$b -> kode_kategory}}</td>
       <td>{{$b -> jenis_barang}}</td>
       <td>{{$b -> kemasang_barang}}</td>
       <td>
