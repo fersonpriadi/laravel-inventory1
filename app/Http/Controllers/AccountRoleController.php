@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Role;
 
 class AccountRoleController extends Controller
 {
     
     public function index()
     {
-        return view('account/role/index');
+        $role = Role::all();
+        return view('account/role/index', compact('role'));
     }
 
   

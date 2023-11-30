@@ -15,8 +15,7 @@
     <tr>
       <th scope="col">id</th>
       <th scope="col">kode</th>
-      <th scope="col">Nama</th>
-      <th style="width: 30%;" scope="col">Deskripsi</th>
+      <th scope="col">Nama Role / Peran</th>
       <th scope="col">Choice</th>
      
     </tr>
@@ -26,12 +25,11 @@
   @php
     $i = 1;
   @endphp
-
+@foreach ($role as $r)
     <tr>
-      <th>{{$i++}}</th>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{$i++}}</td>
+      <td>{{$r -> kode}}</td>
+      <td>{{$r -> nama}}</td> 
       <td>
           <a href="" 
           class="btn btn-danger rounded-circle"
@@ -47,6 +45,7 @@
           <i class="fa-solid fa-pencil"></i></a>
       </td>
     </tr>
+@endforeach
 
   </tbody>
 </table>
