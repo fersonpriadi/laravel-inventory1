@@ -13,6 +13,7 @@ use App\Http\Controllers\LandingDatastokController;
 use App\Http\Controllers\DeleteHistoryController;
 use App\Http\Controllers\AddUserController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AccountRoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -172,7 +173,13 @@ Route::post('/proses/simpan/user', [AddUserController::class, 'store'])
 ->middleware('auth');
 
 
-Route::get('/account-managemant', [AccountController::class, 'index']);
+Route::get('/account-managemant', [AccountController::class, 'index'])
+->name('account-managemant')
+->middleware('auth');
+
+Route::get('/account-role', [AccountRoleController::class, 'index'])
+->name('account-role')
+->middleware('auth');
 
 
 // route fungsi add user login end

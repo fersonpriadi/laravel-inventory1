@@ -5,7 +5,7 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link {{(Request::segment(2) == 'barang') ? 'active' : '' }}" 
-    href="{{url('/master-barang')}}"> <i class="fa-solid fa-user-group"></i>
+    href="{{route('account-role')}}"> <i class="fa-solid fa-user-group"></i>
     Role Managemant</a>
   </li>
   <li class="nav-item">
@@ -20,7 +20,7 @@
   </li>
 </ul>
 <div class="tab-content">
-  @yield('master-konten-barang')
+  @yield('konten-role')
 </div>
 
 
