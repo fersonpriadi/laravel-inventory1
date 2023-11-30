@@ -27,6 +27,8 @@
                     <div class="container-fluid px-4 pt-4">
                         @include('template/flash-message')
                         @yield('konten')
+                        @yield('konten-account')
+
                     </div>
                 </main>
                

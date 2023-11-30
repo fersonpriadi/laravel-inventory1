@@ -12,6 +12,7 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\LandingDatastokController;
 use App\Http\Controllers\DeleteHistoryController;
 use App\Http\Controllers\AddUserController;
+use App\Http\Controllers\AccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -169,6 +170,9 @@ Route::get('/add/new/user', [AddUserController::class, 'index'])
 Route::post('/proses/simpan/user', [AddUserController::class, 'store'])
 ->name('proses-simpan-user')
 ->middleware('auth');
+
+
+Route::get('/account-managemant', [AccountController::class, 'index']);
 
 
 // route fungsi add user login end

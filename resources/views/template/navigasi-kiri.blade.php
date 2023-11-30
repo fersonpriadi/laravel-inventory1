@@ -26,6 +26,12 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-trash"></i></div>
                                 Restore Item
                             </a>
+                            <hr style="color:white;">
+                            <a class="nav-link {{(Request::segment(1) == 'account-management') ? 'active' : '' }} " 
+                                href="{{ url('/account-managemant')}}">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-users-gear"></i></div>
+                                Account Management
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer" style="background-color:  rgb(20, 100, 70);">
