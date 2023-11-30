@@ -36,7 +36,7 @@
           onclick=""> 
           <i class="fa-solid fa-trash"></i></a>
 
-          <a href="" 
+          <a href="{{route('account-role-detail', ['id' => $r->id])}}" 
           class="btn btn-success rounded-circle"> 
           <i class="fa-solid fa-eye"></i></a>
 

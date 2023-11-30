@@ -173,12 +173,16 @@ Route::post('/proses/simpan/user', [AddUserController::class, 'store'])
 ->middleware('auth');
 
 
-Route::get('/account-managemant', [AccountController::class, 'index'])
+Route::get('/account', [AccountController::class, 'index'])
 ->name('account-managemant')
 ->middleware('auth');
 
-Route::get('/account-role', [AccountRoleController::class, 'index'])
+Route::get('/account/role', [AccountRoleController::class, 'index'])
 ->name('account-role')
+->middleware('auth');
+
+Route::get('/account/role/{id}', [AccountRoleController::class, 'show'])
+->name('account-role-detail')
 ->middleware('auth');
 
 

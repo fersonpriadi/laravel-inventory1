@@ -28,7 +28,7 @@
                             </a>
                             <hr style="color:white;">
                             <a class="nav-link {{(Request::segment(1) == 'account-management') ? 'active' : '' }} " 
-                                href="{{ url('/account-managemant')}}">
+                                href="{{ route('account-managemant')}}">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-users-gear"></i></div>
                                 Account Management
                             </a>
